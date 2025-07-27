@@ -1,0 +1,31 @@
+body {
+    background-image: url('../../public/landing-page-background.png');
+    background-size: cover;      /* fills container */
+    background-position: center; /* centers image */
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.contents {
+    color: white;
+    display: flex;
+    place-items: center;
+    height: 50vh;
+    /* background-color: rgba(0, 0, 0, 0.5); semi-transparent background to check spacing area */
+}
+
+.background {
+    background-color: rgb(1,80,49);
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+h4 {
+    margin-top: 10px;
+    font-size: 20px;
+}
