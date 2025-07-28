@@ -1,14 +1,50 @@
-html,
-body {
-  --bs-light-rgb: 236, 236, 236;
-  box-sizing: border-box;
+/* globals.css */
+
+html, body {
+  --bs-light-rgb: 19, 102, 39;
+  background-color: #165016; /* UH Mānoa green */
+  color: white;
   height: 100%;
-  padding: 0;
   margin: 0;
-}
-.wrapper {
+  padding: 0;
   box-sizing: border-box;
-  min-height: 100%;
+}
+
+/* Make all elements fill vertically and allow flex layouts to grow */
+body, #__next, .wrapper {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #165016;
+}
+
+/* Optional: ensure all page sections inherit background */
+main, section, header, footer {
+  background-color: #165016;
+  color: white;
+}
+
+/* Your existing styles */
+.logo-background {
+  background-color: #165016;
+}
+.logo-text {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.uh-navbar {
+  background-color: #165016;
+  color: white;
+}
+.uh-navbar .nav-link,
+.uh-navbar .navbar-brand,
+.uh-navbar .dropdown-item {
+  color: white;
+}
+.uh-navbar .nav-link:hover,
+.uh-navbar .navbar-brand:hover,
+.uh-navbar .dropdown-item:hover {
+  color: #d4edda;
 }
