@@ -1,18 +1,44 @@
-import { Col, Container } from 'react-bootstrap';
+import { Row, Col, Container, Image } from 'react-bootstrap';
+import { Twitter, Facebook, Instagram } from 'react-bootstrap-icons';
+import '../app/footer.css';
 
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 const Footer = () => (
-  <footer className="mt-auto py-3 bg-light">
-    <Container>
-      <Col className="text-center">
-        Department of Information and Computer Sciences
-        <br />
-        University of Hawaii
-        <br />
-        Honolulu, HI 96822
-        <br />
-        <a href="http://ics-software-engineering.github.io/nextjs-application-template">Template Home Page</a>
-      </Col>
+  <footer className="mt-auto py-2 bg-light">
+    <Container className="justify-content-center aling-middle">
+      <Row className="justify-content-center">
+        <Col xs={4} className="text-centor test-footer">
+          <h3>Contact Us</h3>
+          Phone Number: (808) 0000-1234
+          <br />
+          <span>
+            Email:&nbsp;
+            <a href="mailto">manoaFoodFinder.edu</a>
+          </span>
+        </Col>
+        <Col xs={2} className="text-left sns-icons">
+          <a href="https://twitter.com/">
+            <Twitter className="mx-2" />
+            Twitter
+          </a>
+          <br />
+          <a href="https://www.facebook.com/">
+            <Facebook className="mx-2" />
+            Facebook
+          </a>
+          <br />
+          <a href="https://www.instagram.com/">
+            <Instagram className="mx-2" />
+            Instagram
+          </a>
+        </Col>
+        <Col xs={3} className="text-left">
+          <div className="d-flex">
+            <Image src="uhm-logo.jpg" width="150px" alt="" />
+            <h1 className="px-2 align-left">Manoa Food Finder</h1>
+          </div>
+        </Col>
+      </Row>
     </Container>
   </footer>
 );
