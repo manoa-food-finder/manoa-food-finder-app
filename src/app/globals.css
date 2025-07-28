@@ -48,3 +48,18 @@ main, section, header, footer {
 .uh-navbar .dropdown-item:hover {
   color: #000000;
 }
+
+html,
+body {
+  --bs-light-rgb: 1, 80, 49;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.wrapper {
+  box-sizing: border-box;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
