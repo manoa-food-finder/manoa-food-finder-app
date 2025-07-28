@@ -48,3 +48,25 @@ main, section, header, footer {
 .uh-navbar .dropdown-item:hover {
   color: #000000;
 }
+
+body {
+    background-color: rgb(1, 80, 49);
+    color: white;
+}
+
+.test-footer {
+    color: white;
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+}
+
+a {
+    color: white;
+}
+
+.sns-icons {
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
