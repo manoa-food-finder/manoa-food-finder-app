@@ -14,3 +14,11 @@ export const EditStuffSchema = Yup.object({
   condition: Yup.string().oneOf(['excellent', 'good', 'fair', 'poor']).required(),
   owner: Yup.string().required(),
 });
+
+export const AddVendorPostSchema = Yup.object({
+  name: Yup.string().required('Name is required'),
+  hours: Yup.string().required('Hours are required'),
+  location: Yup.string().required('Location is required'),
+  description: Yup.string().required('Description is required'),
+  owner: Yup.string().required(),
+});
