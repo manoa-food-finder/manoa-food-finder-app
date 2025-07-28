@@ -14,7 +14,7 @@ export default function FullWidthImage() {
         priority
       />
       <div className="position-absolute top-50 start-50 translate-middle bg-success text-white px-4 py-2 rounded">
-        <h2 className="mb-0">WELCOME VENDOR</h2>
+        <h2 className="mb-0">WELCOME USER</h2>
       </div>
     </div>
   );

@@ -18,10 +18,7 @@ export default function MiddleMenu() {
         <Navbar.Collapse className="justify-content-center">
           <Nav>
             <Nav.Link>MAP</Nav.Link>
-            <NavDropdown title={<span>POSTINGS</span>} id="brands-nav">
-              <NavDropdown.Item>View Postings</NavDropdown.Item>
-              <NavDropdown.Item>Create New Posting</NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link>POSTINGS</Nav.Link>
             <Nav.Link>CONTACT US</Nav.Link>
           </Nav>
         </Navbar.Collapse>
