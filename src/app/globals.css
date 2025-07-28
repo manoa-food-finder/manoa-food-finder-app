@@ -41,10 +41,10 @@ main, section, header, footer {
 .uh-navbar .nav-link,
 .uh-navbar .navbar-brand,
 .uh-navbar .dropdown-item {
-  color: white;
+  color: rgb(33, 159, 14);
 }
 .uh-navbar .nav-link:hover,
 .uh-navbar .navbar-brand:hover,
 .uh-navbar .dropdown-item:hover {
-  color: #d4edda;
+  color: #000000;
 }
