@@ -1,3 +1,5 @@
+'use client';
+
 import { Col, Container, Image, Row, Button } from 'react-bootstrap';
 import './landing.css';
 
@@ -19,8 +21,24 @@ const Home = () => (
         </Col>
 
         <Col xs={6} className="mx-3 d-flex flex-column justify-content-center background">
-          <Button variant="success" className="my-1 background">New? Register here</Button>
-          <Button variant="success" className="my-1 background">Login</Button>
+          <Button
+            variant="success"
+            className="my-1 background"
+            onClick={() => {
+              window.location.href = '/auth/signup';
+            }}
+          >
+            New? Register Here!
+          </Button>
+          <Button
+            variant="success"
+            className="my-1 background"
+            onClick={() => {
+              window.location.href = '/auth/signin';
+            }}
+          >
+            Login
+          </Button>
         </Col>
       </Row>
     </Container>
