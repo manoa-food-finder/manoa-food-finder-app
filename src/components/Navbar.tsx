@@ -67,6 +67,19 @@ const NavBar: React.FC = () => {
             ) : (
               ''
             )}
+            {currentUser && role === 'VENDER' ? (
+              <Nav.Link
+                id="vender-nav"
+                href="/vender"
+                key="vender"
+                active={pathName === '/vender'}
+                className="mainNav"
+              >
+                Vender Info
+              </Nav.Link>
+            ) : (
+              ''
+            )}
           </Nav>
           <Nav>
             {session ? (

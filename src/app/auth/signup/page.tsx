@@ -4,7 +4,7 @@ import { signIn } from 'next-auth/react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { Card, Col, Container, Button, Form, Row } from 'react-bootstrap';
+import { Card, Col, Container, Button, ButtonGroup, Form, Row } from 'react-bootstrap';
 import { createUser } from '@/lib/dbActions';
 import '../../globals.css';
 
@@ -12,8 +12,11 @@ type SignUpForm = {
   email: string;
   password: string;
   confirmPassword: string;
+  role: string; // required
   // acceptTerms: boolean;
 };
+
+const roleKeys = ['VENDER', 'USER'];
 
 /** The sign up page. */
 const SignUp = () => {
@@ -26,6 +29,7 @@ const SignUp = () => {
     confirmPassword: Yup.string()
       .required('Confirm Password is required')
       .oneOf([Yup.ref('password'), ''], 'Confirm Password does not match'),
+    role: Yup.string().required('Role is required').oneOf(['VENDER', 'USER'], 'Role is required'),
   });
 
   const {
@@ -80,6 +84,26 @@ const SignUp = () => {
                       className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}
                     />
                     <div className="invalid-feedback">{errors.confirmPassword?.message}</div>
+                  </Form.Group>
+                  <Form.Group className="form-group">
+                    <Form.Label>
+                      User or Vender
+                  &nbsp;
+                    </Form.Label>
+                    <ButtonGroup className={`form-control ${errors.role ? 'is-invalid' : ''}`}>
+                      {roleKeys.map((role) => (
+                        <Form.Check
+                          key={role}
+                          inline
+                          type="radio"
+                          label={role}
+                          id={role}
+                          value={role}
+                          {...register('role')}
+                        />
+                      ))}
+                    </ButtonGroup>
+                    <div className="custom-card">{errors.role?.message}</div>
                   </Form.Group>
                   <Form.Group className="form-group py-3">
                     <Row>
