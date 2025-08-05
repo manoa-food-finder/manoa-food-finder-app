@@ -16,7 +16,7 @@ type SignUpForm = {
   // acceptTerms: boolean;
 };
 
-const roleKeys = ['VENDER', 'USER'];
+const roleKeys = ['USER', 'VENDOR'];
 
 /** The sign up page. */
 const SignUp = () => {
@@ -29,7 +29,7 @@ const SignUp = () => {
     confirmPassword: Yup.string()
       .required('Confirm Password is required')
       .oneOf([Yup.ref('password'), ''], 'Confirm Password does not match'),
-    role: Yup.string().required('Role is required').oneOf(['VENDER', 'USER'], 'Role is required'),
+    role: Yup.string().required('Role is required').oneOf(['USER', 'VENDOR'], 'Role is required'),
   });
 
   const {
@@ -87,7 +87,7 @@ const SignUp = () => {
                   </Form.Group>
                   <Form.Group className="form-group">
                     <Form.Label>
-                      User or Vender
+                      User or Vendr
                   &nbsp;
                     </Form.Label>
                     <ButtonGroup className={`form-control ${errors.role ? 'is-invalid' : ''}`}>

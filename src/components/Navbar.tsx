@@ -67,15 +67,15 @@ const NavBar: React.FC = () => {
             ) : (
               ''
             )}
-            {currentUser && role === 'VENDER' ? (
+            {currentUser && role === 'VENDOR' ? (
               <Nav.Link
-                id="vender-nav"
-                href="/vender"
-                key="vender"
-                active={pathName === '/vender'}
+                id="vendor-nav"
+                href="/vendor"
+                key="vendor"
+                active={pathName === '/vendor'}
                 className="mainNav"
               >
-                Vender Info
+                Vendor Info
               </Nav.Link>
             ) : (
               ''
