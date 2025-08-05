@@ -14,11 +14,12 @@ const NavBar: React.FC = () => {
   const userWithRole = session?.user as { email: string; randomKey: string };
   const role = userWithRole?.randomKey;
   const pathName = usePathname();
+
   return (
     <Navbar bg="light" expand="lg" data-bs-theme="dark">
       <Container>
         <Navbar.Brand href="/" className="mainNav">
-        <Image src="uhm-logo.jpg" width="75px" alt="" />
+          <Image src="uhm-logo.jpg" width="75px" alt="" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -44,9 +45,9 @@ const NavBar: React.FC = () => {
                     POSTING
                   </Nav.Link>,
                   <Nav.Link
-                    id="list-stuff-nav"
+                    id="contact-nav"
                     href="/list"
-                    key="list"
+                    key="contact"
                     active={pathName === '/list'}
                     className="mainNav"
                   >
@@ -70,9 +71,9 @@ const NavBar: React.FC = () => {
             {currentUser && role === 'VENDOR' ? (
               <Nav.Link
                 id="vendor-nav"
-                href="/vendor"
+                href="/vendorinfo"    
                 key="vendor"
-                active={pathName === '/vendor'}
+                active={pathName === '/vendorinfo'}  
                 className="mainNav"
               >
                 Vendor Info

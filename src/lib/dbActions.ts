@@ -31,6 +31,14 @@ export async function addStuff(stuff: { name: string; quantity: number; owner: s
   redirect('/list');
 }
 
+
+export async function addVendorInfo(data: { name: string; location: string; hours: string; owner: string }) {
+  return prisma.vendorInfo.create({
+    data,
+  });
+}
+
+
 /**
  * Edits an existing stuff in the database.
  * @param stuff, an object with the following properties: id, name, quantity, owner, condition.

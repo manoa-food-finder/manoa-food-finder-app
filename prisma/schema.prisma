@@ -44,3 +44,11 @@ model Stuff {
   condition Condition @default(good)
   owner     String
 }
+model VendorInfo {
+  id       Int    @id @default(autoincrement())
+  name     String
+  location String
+  hours    String
+  owner    String
+}
+
