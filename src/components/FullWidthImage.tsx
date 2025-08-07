@@ -14,23 +14,33 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('Sending...');
-    
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
 
-    setStatus(response.ok ? 'Message sent!' : 'Failed to send.');
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        setStatus('Message sent successfully!');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus(result.error || 'Failed to send message.');
+      }
+    } catch (error) {
+      setStatus('Error sending message.');
+    }
   };
 
   return (
     <div>
-      {/* Hero Image Section */}
+      {/* Hero Image */}
       <div className="position-relative">
         <Image
           src="/hero.png"
-          alt="Contact"
+          alt="Contact Page"
           width={1500}
           height={800}
           className="img-fluid w-100"
