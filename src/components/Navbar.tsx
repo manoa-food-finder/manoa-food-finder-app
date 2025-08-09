@@ -45,9 +45,9 @@ const NavBar: React.FC = () => {
                   </Nav.Link>,
                   <Nav.Link
                     id="list-stuff-nav"
-                    href="/list"
-                    key="list"
-                    active={pathName === '/list'}
+                    href="/contact"
+                    key="contact"
+                    active={pathName === '/contact'}
                     className="mainNav"
                   >
                     CONTACT US
