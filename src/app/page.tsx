@@ -1,7 +1,7 @@
 import { Col, Container, Image, Row, Button } from 'react-bootstrap';
 import './landing.css';
 
-/** The Home page. */
+/** The Home page. Test Change */
 const Home = () => (
   <main>
     <Container id="landing-page" className="align-middle contents justify-content-center">
