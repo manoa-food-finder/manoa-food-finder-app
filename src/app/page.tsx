@@ -1,5 +1,3 @@
-'use client';
-
 import { Col, Container, Image, Row, Button } from 'react-bootstrap';
 import './landing.css';
 
