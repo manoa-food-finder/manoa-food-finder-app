@@ -23,6 +23,7 @@ export default function MiddleMenu() {
               <NavDropdown.Item>Create New Posting</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link>CONTACT US</Nav.Link>
+            <Nav.Link>HELP</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
