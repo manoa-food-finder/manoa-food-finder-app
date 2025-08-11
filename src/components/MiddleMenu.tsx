@@ -1,6 +1,6 @@
 'use client';
 
-import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Container, Navbar, Nav } from 'react-bootstrap';
 import Image from 'next/image'; // If using a logo image
 
 export default function MiddleMenu() {
@@ -20,6 +20,7 @@ export default function MiddleMenu() {
             <Nav.Link>MAP</Nav.Link>
             <Nav.Link>POSTINGS</Nav.Link>
             <Nav.Link>CONTACT US</Nav.Link>
+            <Nav.Link>HELP</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
