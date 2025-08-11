@@ -2,7 +2,6 @@
 
 import { signIn } from 'next-auth/react';
 import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
-import '../../globals.css';
 
 /** The sign in page. */
 const SignIn = () => {
