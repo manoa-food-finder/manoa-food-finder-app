@@ -1,4 +1,4 @@
-import { Col, Container, Image, Row, Button } from 'react-bootstrap';
+import { Col, Container, Image, Row } from 'react-bootstrap';
 import './landing.css';
 
 /** The Home page. */
@@ -19,24 +19,7 @@ const Home = () => (
         </Col>
 
         <Col xs={6} className="mx-3 d-flex flex-column justify-content-center background">
-          <Button
-            variant="success"
-            className="my-1 background"
-            onClick={() => {
-              window.location.href = '/auth/signup';
-            }}
-          >
-            New? Register Here!
-          </Button>
-          <Button
-            variant="success"
-            className="my-1 background"
-            onClick={() => {
-              window.location.href = '/auth/signin';
-            }}
-          >
-            Login
-          </Button>
+          test
         </Col>
       </Row>
     </Container>
