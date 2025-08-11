@@ -18,7 +18,7 @@ const NavBar: React.FC = () => {
     <Navbar bg="light" expand="lg" data-bs-theme="dark">
       <Container>
         <Navbar.Brand href="/" className="mainNav">
-        <Image src="uhm-logo.jpg" width="75px" alt="" />
+          <Image src="uhm-logo.jpg" width="75px" alt="" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -44,10 +44,19 @@ const NavBar: React.FC = () => {
                     POSTING
                   </Nav.Link>,
                   <Nav.Link
-                    id="list-stuff-nav"
+                    id="feedback-nav"
+                    href="/feedback"
+                    key="feedback"
+                    active={pathName === '/feedback'}
+                    className="mainNav"
+                  >
+                    COMMUNITY FEEDBACK
+                  </Nav.Link>,
+                  <Nav.Link
+                    id="contact-us-nav"
                     href="/list"
-                    key="list"
-                    active={pathName === '/list'}
+                    key="contact"
+                    active={pathName === ''}
                     className="mainNav"
                   >
                     CONTACT US
