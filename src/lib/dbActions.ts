@@ -1,6 +1,6 @@
 'use server';
 
-import { Stuff, Condition } from '@prisma/client';
+import { Stuff, Condition, Role } from '@prisma/client';
 import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { prisma } from './prisma';
@@ -65,15 +65,17 @@ export async function deleteStuff(id: number) {
 
 /**
  * Creates a new user in the database.
- * @param credentials, an object with the following properties: email, password.
+ * @param credentials, an object with the following properties: email, password, role.
  */
-export async function createUser(credentials: { email: string; password: string }) {
+export async function createUser(credentials: { email: string; password: string; role: string }) {
   // console.log(`createUser data: ${JSON.stringify(credentials, null, 2)}`);
   const password = await hash(credentials.password, 10);
+  const roleTemp = credentials.role === 'VENDOR' ? Role.VENDOR : Role.USER;
   await prisma.user.create({
     data: {
       email: credentials.email,
       password,
+      role: roleTemp, // Default to USER if no role is provided
     },
   });
 }
@@ -92,3 +94,19 @@ export async function changePassword(credentials: { email: string; password: str
     },
   });
 }
+
+export const addVendorPost = async (data: {
+  name: string;
+  hours: string;
+  location: string;
+  description: string;
+  owner: string;
+}) => {
+  await prisma.vendorPost.create({ data });
+};
+
+export const deleteVendorPost = async (id: number) => {
+  await prisma.vendorPost.delete({
+    where: { id },
+  });
+};

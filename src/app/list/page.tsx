@@ -1,49 +1,29 @@
 import { getServerSession } from 'next-auth';
-import { Col, Container, Row, Table } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { prisma } from '@/lib/prisma';
-import StuffItem from '@/components/StuffItem';
+import VendorPostItem from '@/components/VendorPostItem';
 import { loggedInProtectedPage } from '@/lib/page-protection';
 import authOptions from '@/lib/authOptions';
+import AddVendorPostClientWrapper from '@/components/AddVendorPostClientWrapper';
 
-/** Render a list of stuff for the logged in user. */
 const ListPage = async () => {
-  // Protect the page, only logged in users can access it.
   const session = await getServerSession(authOptions);
-  loggedInProtectedPage(
-    session as {
-      user: { email: string; id: string; randomKey: string };
-      // eslint-disable-next-line @typescript-eslint/comma-dangle
-    } | null,
-  );
-  const owner = (session && session.user && session.user.email) || '';
-  const stuff = await prisma.stuff.findMany({
-    where: {
-      owner,
-    },
-  });
-  // console.log(stuff);
+  loggedInProtectedPage(session as any);
+
+  const currentUserEmail = session?.user?.email || '';
+  const vendorPosts = await prisma.vendorPost.findMany(); // lowercase model name
+
   return (
     <main>
       <Container id="list" fluid className="py-3">
+        <AddVendorPostClientWrapper />
+        <h1 className="mt-4">Vendor Posts</h1>
         <Row>
-          <Col>
-            <h1>Stuff</h1>
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Quantity</th>
-                  <th>Condition</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {stuff.map((item) => (
-                  <StuffItem key={item.id} {...item} />
-                ))}
-              </tbody>
-            </Table>
-          </Col>
+          {vendorPosts.map((post) => (
+            <Col sm={6} md={6} lg={4} key={post.id}>
+              <VendorPostItem {...post} currentUserEmail={currentUserEmail} />
+            </Col>
+          ))}
         </Row>
       </Container>
     </main>
