@@ -102,11 +102,11 @@ export const addVendorPost = async (data: {
   description: string;
   owner: string;
 }) => {
-  await prisma.VendorPost.create({ data });
+  await prisma.vendorPost.create({ data });
 };
 
 export const deleteVendorPost = async (id: number) => {
-  await prisma.VendorPost.delete({
+  await prisma.vendorPost.delete({
     where: { id },
   });
 };
