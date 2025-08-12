@@ -94,3 +94,19 @@ export async function changePassword(credentials: { email: string; password: str
     },
   });
 }
+
+export const addVendorPost = async (data: {
+  name: string;
+  hours: string;
+  location: string;
+  description: string;
+  owner: string;
+}) => {
+  await prisma.VendorPost.create({ data });
+};
+
+export const deleteVendorPost = async (id: number) => {
+  await prisma.VendorPost.delete({
+    where: { id },
+  });
+};
