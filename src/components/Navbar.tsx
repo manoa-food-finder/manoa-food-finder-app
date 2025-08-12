@@ -26,10 +26,10 @@ const NavBar: React.FC = () => {
             {currentUser
               ? [
                   <Nav.Link
-                    id="add-stuff-nav"
-                    href="/add"
-                    key="add"
-                    active={pathName === '/add'}
+                    id="map"
+                    href="/map"
+                    key="map"
+                    active={pathName === '/map'}
                     className="mainNav"
                   >
                     MAP
@@ -45,9 +45,9 @@ const NavBar: React.FC = () => {
                   </Nav.Link>,
                   <Nav.Link
                     id="list-stuff-nav"
-                    href="/list"
-                    key="list"
-                    active={pathName === '/list'}
+                    href="/contact"
+                    key="contact"
+                    active={pathName === '/contact'}
                     className="mainNav"
                   >
                     CONTACT US
@@ -63,6 +63,19 @@ const NavBar: React.FC = () => {
                 className="mainNav"
               >
                 Admin
+              </Nav.Link>
+            ) : (
+              ''
+            )}
+            {currentUser && role === 'VENDOR' ? (
+              <Nav.Link
+                id="vendor-nav"
+                href="/vendor"
+                key="vendor"
+                active={pathName === '/vendor'}
+                className="mainNav"
+              >
+                Vendor Info
               </Nav.Link>
             ) : (
               ''

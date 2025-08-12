@@ -12,3 +12,8 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.custom-card {
+  color: white;
+  background-color: rgb(3, 139, 85);
+}

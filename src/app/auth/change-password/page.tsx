@@ -8,6 +8,7 @@ import swal from 'sweetalert';
 import { Card, Col, Container, Button, Form, Row } from 'react-bootstrap';
 import { changePassword } from '@/lib/dbActions';
 import LoadingSpinner from '@/components/LoadingSpinner';
+import '../../globals.css';
 
 type ChangePasswordForm = {
   oldpassword: string;
@@ -57,7 +58,7 @@ const ChangePassword = () => {
         <Row className="justify-content-center">
           <Col xs={5}>
             <h1 className="text-center">Change Password</h1>
-            <Card>
+            <Card className="custom-card">
               <Card.Body>
                 <Form onSubmit={handleSubmit(onSubmit)}>
                   <Form.Group className="form-group">
