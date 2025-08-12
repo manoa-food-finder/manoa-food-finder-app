@@ -11,7 +11,7 @@ const ListPage = async () => {
   loggedInProtectedPage(session as any);
 
   const currentUserEmail = session?.user?.email || '';
-  const vendorPosts = await prisma.VendorPost.findMany(); // lowercase model name
+  const vendorPosts = await prisma.vendorPost.findMany(); // lowercase model name
 
   return (
     <main>
